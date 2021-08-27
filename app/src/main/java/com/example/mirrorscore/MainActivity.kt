@@ -3,7 +3,7 @@ package com.example.mirrorscore
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.mirrorscore.auth.AuthActivity
+import com.example.mirrorscore.ui.auth.AuthActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

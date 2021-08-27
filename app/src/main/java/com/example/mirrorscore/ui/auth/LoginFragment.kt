@@ -1,4 +1,4 @@
-package com.example.mirrorscore.auth
+package com.example.mirrorscore.ui.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

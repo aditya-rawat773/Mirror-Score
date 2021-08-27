@@ -9,6 +9,6 @@
     <fragment
         android:id="@+id/loginFragment"
         tools:layout="@layout/fragment_login"
-        android:name="com.example.mirrorscore.auth.LoginFragment"
+        android:name="com.example.mirrorscore.ui.auth.LoginFragment"
         android:label="LoginFragment" />
 </navigation>

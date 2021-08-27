@@ -1,4 +1,4 @@
-package com.example.mirrorscore.auth
+package com.example.mirrorscore.ui.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
