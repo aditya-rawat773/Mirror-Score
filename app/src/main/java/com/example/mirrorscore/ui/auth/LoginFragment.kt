@@ -36,8 +36,8 @@ class LoginFragment : Fragment() {
 
         viewModel = ViewModelProvider(requireActivity()).get(AuthViewModel::class.java)
 
-        viewModel._login.observe(viewLifecycleOwner, {
-             Toast.makeText(requireContext(),"$it",Toast.LENGTH_SHORT).show()
+        viewModel.login.observe(viewLifecycleOwner, {
+             //Toast.makeText(requireContext(),"$it",Toast.LENGTH_SHORT).show()
         })
         buttonLogin.setOnClickListener {
             val email = editTextTextEmailAddress.text.toString().trim()

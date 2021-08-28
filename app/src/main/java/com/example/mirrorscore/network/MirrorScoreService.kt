@@ -1,5 +1,6 @@
 package com.example.mirrorscore.network
 
+import android.util.Log
 import com.example.mirrorscore.responses.LoginResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -24,6 +25,10 @@ interface MirrorScoreService {
          operator fun invoke():MirrorScoreService{
              return Retrofit.Builder()
                  .baseUrl(BASE_URL)
+                 .client(OkHttpClient.Builder()
+                     .addInterceptor(HttpLoggingInterceptor( HttpLoggingInterceptor.Logger{ Log.d("okhttp",it) })
+                         .setLevel(HttpLoggingInterceptor.Level.BODY))
+                     .build())
                  .addConverterFactory(GsonConverterFactory.create())
                  .build()
                  .create(MirrorScoreService::class.java)

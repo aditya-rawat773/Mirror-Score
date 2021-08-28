@@ -17,7 +17,6 @@ class AuthRepository{
         val loginResponse = MutableLiveData<String>()
 
          MirrorScoreService().login(email,password)
-
              .enqueue(object : Callback<LoginResponse> {
                  override fun onResponse(
                      call: Call<LoginResponse>,
