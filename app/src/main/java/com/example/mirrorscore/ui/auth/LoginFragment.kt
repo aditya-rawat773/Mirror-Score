@@ -31,21 +31,20 @@ class LoginFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity()).get(LoginViewModel::class.java)
 
 
-
-
         buttonLogin.setOnClickListener {
             val email = editTextTextEmailAddress.text.toString().trim()
             val password = editTextTextPassword.text.toString().trim()
 
+
+
+            viewModel.getLoginObserver().observe(viewLifecycleOwner, {
+                Log.d("adi1", "onViewCreated:${it} ")
+          })
+
             viewModel.login(email, password)
-
-            viewModel.login1.observe(viewLifecycleOwner, {
-
-                Log.d("adi", "onViewCreated:$it ")
-                var res = 
-                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
-            })
         }
+
+
 
 
 

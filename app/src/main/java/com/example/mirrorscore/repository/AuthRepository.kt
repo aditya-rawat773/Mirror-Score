@@ -1,41 +1,16 @@
 package com.example.mirrorscore.repository
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.example.mirrorscore.network.MirrorScoreService
 import com.example.mirrorscore.responses.LoginResponse
-import retrofit2.Call
-import retrofit2.Callback
 import retrofit2.Response
-import kotlin.math.log
 
 class AuthRepository{
 
-     fun login(email:String, password:String):MutableLiveData<String>{
 
-        val loginResponse = MutableLiveData<String>()
 
-         MirrorScoreService().login(email,password)
-             .enqueue(object : Callback<LoginResponse> {
-                 override fun onResponse(
-                     call: Call<LoginResponse>,
-                     response: Response<LoginResponse>
-                 ) {
-                     Log.d("adi1", "onResponse:${response} ")
-                     if (response.isSuccessful) {
-                         loginResponse.value = response.body().toString()
-                         Log.d("adi2", "onResponse:${loginResponse.value.toString()} ")
-                     } else {
-                         loginResponse.value = response.errorBody()?.toString()
-                     }
-                 }
-
-                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                     loginResponse.value = t.message
-                 }
-             })
-         return loginResponse
+    suspend fun login(email:String, password:String):Response<LoginResponse>{
+        // Log.d("adi", "login: ${response.body().toString()}")
+        return MirrorScoreService().login(email, password)
     }
 
 }

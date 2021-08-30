@@ -5,6 +5,7 @@ import com.example.mirrorscore.responses.LoginResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Field
@@ -16,10 +17,10 @@ interface MirrorScoreService {
 
     @FormUrlEncoded
     @POST("login")
-     fun login(
+     suspend fun login(
         @Field("email") email:String,
         @Field("password") password:String
-    ): Call<LoginResponse>
+    ): Response<LoginResponse>
 
      companion object{
          operator fun invoke():MirrorScoreService{
