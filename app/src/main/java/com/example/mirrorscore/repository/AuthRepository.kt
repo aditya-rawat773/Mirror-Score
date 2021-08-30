@@ -12,7 +12,7 @@ import kotlin.math.log
 
 class AuthRepository{
 
-     fun login(email:String, password:String):LiveData<String>{
+     fun login(email:String, password:String):MutableLiveData<String>{
 
         val loginResponse = MutableLiveData<String>()
 
@@ -22,9 +22,10 @@ class AuthRepository{
                      call: Call<LoginResponse>,
                      response: Response<LoginResponse>
                  ) {
-                     Log.d("ar", "onResponse:${response} ")
+                     Log.d("adi1", "onResponse:${response} ")
                      if (response.isSuccessful) {
-                         loginResponse.value = response.body()?.toString()
+                         loginResponse.value = response.body().toString()
+                         Log.d("adi2", "onResponse:${loginResponse.value.toString()} ")
                      } else {
                          loginResponse.value = response.errorBody()?.toString()
                      }

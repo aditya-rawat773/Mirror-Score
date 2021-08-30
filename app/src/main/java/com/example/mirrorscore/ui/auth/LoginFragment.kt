@@ -1,18 +1,22 @@
 package com.example.mirrorscore.ui.auth
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.mirrorscore.R
 import com.example.mirrorscore.responses.LoginResponse
+import com.example.mirrorscore.utils.Utils
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : Fragment() {
 
     private lateinit var viewModel:LoginViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,17 +30,24 @@ class LoginFragment : Fragment() {
 
         viewModel = ViewModelProvider(requireActivity()).get(LoginViewModel::class.java)
 
-        viewModel.login.observe(viewLifecycleOwner, {
-             //Toast.makeText(requireContext(),"$it",Toast.LENGTH_SHORT).show()
-        })
+
+
 
         buttonLogin.setOnClickListener {
             val email = editTextTextEmailAddress.text.toString().trim()
             val password = editTextTextPassword.text.toString().trim()
 
             viewModel.login(email, password)
-            
+
+            viewModel.login1.observe(viewLifecycleOwner, {
+
+                Log.d("adi", "onViewCreated:$it ")
+                var res = 
+                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+            })
         }
+
+
 
     }
 

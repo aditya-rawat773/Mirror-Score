@@ -25,10 +25,6 @@ interface MirrorScoreService {
          operator fun invoke():MirrorScoreService{
              return Retrofit.Builder()
                  .baseUrl(BASE_URL)
-                 .client(OkHttpClient.Builder()
-                     .addInterceptor(HttpLoggingInterceptor( HttpLoggingInterceptor.Logger{ Log.d("okhttp",it) })
-                         .setLevel(HttpLoggingInterceptor.Level.BODY))
-                     .build())
                  .addConverterFactory(GsonConverterFactory.create())
                  .build()
                  .create(MirrorScoreService::class.java)

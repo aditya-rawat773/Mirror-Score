@@ -14,10 +14,10 @@ class LoginViewModel:ViewModel() {
 
    private val auth:AuthRepository = AuthRepository()
 
-    var login:MutableLiveData<String> = MutableLiveData()
+    var login1:MutableLiveData<String> = MutableLiveData()
 
     fun login(email:String,password:String){
-        login.value =auth.login(email,password).value
+        login1 =auth.login(email,password)
     }
 
 
