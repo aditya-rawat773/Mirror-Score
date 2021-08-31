@@ -1,8 +1,10 @@
 package com.example.mirrorscore.utils
 
+import android.content.SharedPreferences
 import com.example.mirrorscore.responses.LoginResponse
 
 object Utils {
 
-    var authLogin:LoginResponse? = null
+    const val BASE_URL="https://mirrorscore-android.herokuapp.com/"
+
 }
