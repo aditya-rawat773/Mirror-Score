@@ -21,8 +21,6 @@ class LoginFragment : Fragment() {
     private lateinit var viewModel:LoginViewModel
     private lateinit var sharedPreferences: SharedPreferences
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,11 +42,11 @@ class LoginFragment : Fragment() {
             val password = editTextTextPassword.text.toString().trim()
 
             viewModel.getLoginObserver().observe(viewLifecycleOwner, { response ->
-                Log.d("adi1", "onViewCreated:$response ")
+                //Log.d("adi1", "onViewCreated:$response ")
 
                 if (response.ReponseMessage == "SUCCESS") {
-                    Toast.makeText(requireContext(), response.ReponseMessage, Toast.LENGTH_SHORT).show()
-                    Log.d("token", "onViewCreated: ${response.Result.token}")
+                    Toast.makeText(requireContext(), response.Comments, Toast.LENGTH_SHORT).show()
+                   // Log.d("token", "onViewCreated: ${response.Result.token}")
 
 
                     val token = response.Result.token.toString()
@@ -61,16 +59,9 @@ class LoginFragment : Fragment() {
                 } else {
                     Toast.makeText(requireContext(), "Invalid id or password", Toast.LENGTH_SHORT).show()
                 }
-
             })
-
             viewModel.login(email, password)
         }
-
-
-
-
-
     }
 
 }

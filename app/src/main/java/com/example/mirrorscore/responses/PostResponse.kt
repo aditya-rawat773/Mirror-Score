@@ -1,5 +1,9 @@
 package com.example.mirrorscore.responses
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+
 data class PostResponse(
     val Comments: String,
     val ReponseMessage: String,
@@ -7,10 +11,12 @@ data class PostResponse(
     val Result: ResultPost
 )
 
+
 data class ResultPost(
         val count: Int,
-        val `data`: List<Data>
+        val data: ArrayList<Data>
 )
+
 
 data class Data(
         val answerCount: Int,
