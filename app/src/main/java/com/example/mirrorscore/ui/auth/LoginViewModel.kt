@@ -30,10 +30,6 @@ class LoginViewModel:ViewModel() {
             if(loginResponse.isSuccessful) {
                 loginData.postValue(loginResponse.body()!!)
             }
-
-
         }
     }
-
-
 }

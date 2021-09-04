@@ -7,16 +7,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mirrorscore.R
+import com.example.mirrorscore.repository.Repository
 import com.example.mirrorscore.responses.Data
 import kotlinx.android.synthetic.main.list_post.view.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import okhttp3.Dispatcher
 
-class HomeAdapter:RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
+class HomeAdapter():RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
+
 
     var items = ArrayList<Data>()
 
     fun setListData(data: ArrayList<Data>){
         this.items = data
-        Log.d("ankit", "setListData:${data.toString()} ")
+        Log.d("ankit", "setListData:${data} ")
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeAdapter.MyViewHolder {
@@ -40,13 +46,22 @@ class HomeAdapter:RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
        private val tvUpVote = view.tv_upvote
 
        @SuppressLint("SetTextI18n")
-       fun bind(data:Data){
+       fun bind(data: Data){
 
            tvName.text = data.userName
            tvSubject.text = data.subject
            tvTime.text = data.updatedOn
            tvUpVote.text = data.upvoteCount.toString()
 
+           with(itemView){
+               this.post_upvote.setOnClickListener{
+                   Log.d("like", "bind:${data.postId} ")
+                   HomeViewModel().upVote(data.postId)
+               }
+           }
        }
     }
+
 }
+
+

@@ -6,7 +6,7 @@ import kotlinx.android.parcel.Parcelize
 
 data class PostResponse(
     val Comments: String,
-    val ReponseMessage: String,
+    val ResponseMessage: String,
     val ResponseCode: Int,
     val Result: ResultPost
 )

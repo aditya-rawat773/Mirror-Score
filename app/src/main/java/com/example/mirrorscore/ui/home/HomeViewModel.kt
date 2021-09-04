@@ -22,4 +22,11 @@ class HomeViewModel:ViewModel() {
             postData.postValue(postResponse.body())
         }
     }
+
+    fun upVote(postId:Int){
+        viewModelScope.launch (Dispatchers.IO) {
+            postRepository.mPostUpVote(postId)
+        }
+    }
+
 }

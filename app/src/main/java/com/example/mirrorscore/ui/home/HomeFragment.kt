@@ -13,6 +13,7 @@ import com.example.mirrorscore.R
 import com.example.mirrorscore.responses.Data
 import com.example.mirrorscore.responses.PostResponse
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.list_post.*
 
 class HomeFragment : Fragment() {
 
@@ -35,8 +36,10 @@ class HomeFragment : Fragment() {
 
 
         recyclerView.apply {
-            layoutManager = LinearLayoutManager(requireContext())
+
             mHomeAdapter = HomeAdapter()
+            layoutManager = LinearLayoutManager(requireContext())
+
             adapter = mHomeAdapter
         }
 
@@ -54,6 +57,5 @@ class HomeFragment : Fragment() {
             })
         homeViewModel.home()
     }
-
 
 }
