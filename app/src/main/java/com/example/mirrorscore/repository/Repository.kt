@@ -8,8 +8,6 @@ import retrofit2.Response
 
 class Repository{
 
-
-
     suspend fun login(email:String, password:String):Response<LoginResponse>{
         // Log.d("adi", "login: ${response.body().toString()}")
         return MirrorScoreService().login(email, password)

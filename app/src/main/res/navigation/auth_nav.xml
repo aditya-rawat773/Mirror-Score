@@ -19,5 +19,14 @@
         android:id="@+id/homeFragment"
         android:name="com.example.mirrorscore.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_addNewPostFragment"
+            app:destination="@id/addNewPostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewPostFragment"
+        android:name="com.example.mirrorscore.ui.addnewpost.AddNewPostFragment"
+        android:label="fragment_add_new_post"
+        tools:layout="@layout/fragment_add_new_post" />
 </navigation>
