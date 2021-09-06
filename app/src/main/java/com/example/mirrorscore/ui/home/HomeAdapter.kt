@@ -10,7 +10,7 @@ import com.example.mirrorscore.R
 import com.example.mirrorscore.responses.Data
 import kotlinx.android.synthetic.main.list_post.view.*
 
-class HomeAdapter(val clickListener: onitemClick):RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
+class HomeAdapter(val clickListener: HomeFragment):RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
 
 
 

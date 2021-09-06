@@ -3,6 +3,7 @@ package com.example.mirrorscore.network
 
 import android.content.SharedPreferences
 import com.example.mirrorscore.responses.LoginResponse
+import com.example.mirrorscore.responses.NewPostResponse
 import com.example.mirrorscore.responses.PostResponse
 import com.example.mirrorscore.responses.PostUpVoteResponse
 import com.example.mirrorscore.utils.Utils.BASE_URL
@@ -35,6 +36,13 @@ interface MirrorScoreService {
              @Field("postId") postId:Int
      ):Response<PostUpVoteResponse>
 
+    @FormUrlEncoded
+    @Headers("Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxMDE4ODM5LCJqdGkiOiJlOTkzOTZkNDI3YmE0MGE4OGFiOWJlODY3MzI0ZTRjOSIsInVzZXJfaWQiOjF9.lfMfskPao7oZGf54O3gj2Xzxc2P2WJD2TWHgZvrjFLo")
+    @POST("discussionWall/post")
+    suspend fun postNew(
+        @Field("subjectId") subjectId:Int,
+        @Field("text") text:String,
+    ):Response<NewPostResponse>
 
      companion object{
          operator fun invoke():MirrorScoreService{
