@@ -45,19 +45,21 @@ class HomeAdapter(val clickListener: HomeFragment):RecyclerView.Adapter<HomeAdap
        private val tvSubject = view.tv_subject
        private val tvTime = view.tv_time
        private val tvUpVote = view.tv_upvote
+       private val tvText = view.tv_text
 
        @SuppressLint("SetTextI18n")
        fun bind(data: Data,position: Int){
 
+           tvText.text = data.text
            tvName.text = data.userName
            tvSubject.text = data.subject
            tvTime.text = data.updatedOn
-           tvUpVote.text = data.upvoteCount.toString()
+           tvUpVote.text = "UpVote Post ("+data.upvoteCount.toString()+")"
 
            with(itemView){
                this.tv_upvote
 
-               this.post_upvote.setOnClickListener{
+               this.tv_upvote.setOnClickListener{
                    Log.d("like", "bind:${data.postId} ")
                    clickListener.onItemClicked(position)
 

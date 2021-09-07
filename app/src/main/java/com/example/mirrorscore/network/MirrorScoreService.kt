@@ -24,7 +24,7 @@ interface MirrorScoreService {
     ): Response<LoginResponse>
 
 
-     @Headers("Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxMDE4ODM5LCJqdGkiOiJlOTkzOTZkNDI3YmE0MGE4OGFiOWJlODY3MzI0ZTRjOSIsInVzZXJfaWQiOjF9.lfMfskPao7oZGf54O3gj2Xzxc2P2WJD2TWHgZvrjFLo")
+     @Headers("Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxNjQ4MzY3LCJqdGkiOiJhYzc0NDU1MGEyNzk0OWY1Yjg5NzM3NjFlNmQyNDg1ZSIsInVzZXJfaWQiOjF9.SVRywMggBgS4zEfi34i8uLXigSz-lnwQ6II0fCpakbg")
      @GET("discussionWall/post")
      suspend fun getPost():Response<PostResponse>
 

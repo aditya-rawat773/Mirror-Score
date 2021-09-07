@@ -1,6 +1,7 @@
 package com.example.mirrorscore.ui.auth
 
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -25,7 +26,6 @@ class LoginViewModel:ViewModel() {
 
         viewModelScope.launch(Dispatchers.IO) {
             val loginResponse =auth.login(email,password)
-         //  Log.d("adi", "login(ViewModel):${loginResponse.body()!!} ")
 
             if(loginResponse.isSuccessful) {
                 loginData.postValue(loginResponse.body()!!)

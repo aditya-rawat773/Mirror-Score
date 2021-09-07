@@ -46,14 +46,16 @@ class AddNewPostFragment : Fragment() {
                 if (it.ReponseMessage == "SUCCESS") {
                     findNavController().navigate(R.id.action_addNewPostFragment_to_homeFragment)
                     Toast.makeText(requireContext(), "${it.Comments.toString()}", Toast.LENGTH_SHORT).show()
-
+                    
                 }
             })
 
             viewModel.mNewPost(subjectId, text)
 
         }
-        
+
+
+
         btn_add_image.setOnClickListener{
 
             val getIntent = Intent(Intent.ACTION_GET_CONTENT)
@@ -79,5 +81,5 @@ class AddNewPostFragment : Fragment() {
         }
         Log.d("url", "onActivityResult: ${data?.data}")
     }
-
+    
 }
