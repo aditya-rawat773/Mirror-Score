@@ -1,4 +1,4 @@
-package com.example.mirrorscore.responses
+package com.example.mirrorscore.models
 
 data class PostUpVoteResponse(
     val Comments: String,

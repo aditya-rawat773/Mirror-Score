@@ -8,7 +8,7 @@ data class LoginResponse(
 )
 
 data class Result(
-    val token: Token,
+    val token:Token,
     val userId: Int
 )
 

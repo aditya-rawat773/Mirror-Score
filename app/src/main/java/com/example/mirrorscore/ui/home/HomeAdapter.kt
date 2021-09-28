@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mirrorscore.R
-import com.example.mirrorscore.responses.Data
+import com.example.mirrorscore.models.Data
 import kotlinx.android.synthetic.main.list_post.view.*
 
 class HomeAdapter(val clickListener: HomeFragment):RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
@@ -48,7 +48,7 @@ class HomeAdapter(val clickListener: HomeFragment):RecyclerView.Adapter<HomeAdap
        private val tvText = view.tv_text
 
        @SuppressLint("SetTextI18n")
-       fun bind(data: Data,position: Int){
+       fun bind(data: Data, position: Int){
 
            tvText.text = data.text
            tvName.text = data.userName

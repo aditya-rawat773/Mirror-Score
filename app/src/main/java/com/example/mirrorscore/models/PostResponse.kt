@@ -1,7 +1,4 @@
-package com.example.mirrorscore.responses
-
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+package com.example.mirrorscore.models
 
 
 data class PostResponse(

@@ -2,12 +2,12 @@ package com.example.mirrorscore.ui.auth
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.mirrorscore.repository.AuthRepository
+import com.example.mirrorscore.repository.Repository
 
 class ViewModelProviderFactory(
-    private val AuthRepository: AuthRepository
+    private val Repository: Repository
 ): ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return LoginViewModel(AuthRepository) as T
+        return LoginViewModel(Repository) as T
     }
 }

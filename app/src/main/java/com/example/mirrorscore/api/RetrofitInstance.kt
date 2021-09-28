@@ -1,12 +1,18 @@
 package com.example.mirrorscore.api
 
-import com.example.mirrorscore.utils.Utils.Companion.BASE_URL
+import com.example.mirrorscore.utils.Constants.Companion.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitInstance {
+
+    var token : String = ""
+
+    fun getToken(token: String ) {
+        this.token = token
+    }
 
     companion object{
         private val retrofit by lazy {
