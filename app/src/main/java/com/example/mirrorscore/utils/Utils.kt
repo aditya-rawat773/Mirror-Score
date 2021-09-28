@@ -1,9 +1,10 @@
 package com.example.mirrorscore.utils
 
-import com.example.mirrorscore.models.LoginResponse
+import android.content.SharedPreferences
+import com.example.mirrorscore.responses.LoginResponse
 
-class Utils{
-    companion object{
-        const val BASE_URL="https://mirrorscore-android.herokuapp.com/"
-    }
+object Utils {
+
+    const val BASE_URL="https://mirrorscore-android.herokuapp.com/"
+
 }

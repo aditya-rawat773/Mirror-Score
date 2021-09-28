@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.addnewpost.AddNewPostFragment"
+    android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/btn_add_image"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Image"
+            android:fontFamily="@font/poppins_light"/>
+
+
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_gravity="center"
+            android:layout_width="160dp"
+            android:layout_height="320dp"
+            android:layout_margin="8dp"
+            />
+
+        <EditText
+            android:hint="Add Text"
+            android:layout_margin="8dp"
+            android:id="@+id/add_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="16sp"
+            />
+
+    <Button
+        android:id="@+id/btn_publish"
+        android:layout_width="wrap_content"
+        android:text="Publish"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_light"
+        android:layout_margin="8dp"/>
+
+</LinearLayout>
