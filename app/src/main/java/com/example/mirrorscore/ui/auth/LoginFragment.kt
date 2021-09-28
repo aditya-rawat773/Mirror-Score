@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.mirrorscore.R
-import com.example.mirrorscore.responses.LoginResponse
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : Fragment() {

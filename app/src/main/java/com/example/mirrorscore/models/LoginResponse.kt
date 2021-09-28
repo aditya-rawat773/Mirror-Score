@@ -1,8 +1,8 @@
-package com.example.mirrorscore.responses
+package com.example.mirrorscore.models
 
 data class LoginResponse(
     val Comments: String,
-    val ReponseMessage: String,
+    val ResponseMessage: String,
     val ResponseCode: Int,
     val Result: Result
 )
