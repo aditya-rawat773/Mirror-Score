@@ -36,10 +36,9 @@ class LoginFragment : Fragment() {
         loginViewModel = ViewModelProvider(this,viewModelProviderFactory).get(LoginViewModel::class.java)
 
 
-        buttonLogin.setOnClickListener {
-            val email = editTextTextEmailAddress.text.toString().trim()
-            val password = editTextTextPassword.text.toString().trim()
-
+        btn_login.setOnClickListener {
+            val email = in_email.editText?.text.toString()
+            val password = in_password.editText?.text.toString()
             loginViewModel.getLoginData(email, password)
         }
 
@@ -48,7 +47,7 @@ class LoginFragment : Fragment() {
 
             when(it){
                 is Resource.Success ->{
-                    // hideProgressBar()
+                    hideProgressBar()
                     it.data?.let { response ->
 
                         val result = response.Result
@@ -60,19 +59,27 @@ class LoginFragment : Fragment() {
                     }
                 }
                 is Resource.Error ->{
-                    // hideProgressBar()
+                    hideProgressBar()
                     it.message?.let{ message ->
                         Toast.makeText(requireContext(), "Invalid Id or Password", Toast.LENGTH_SHORT).show()
                     }
                 }
                 is Resource.Loading ->{
-                    //showProgressBar()
+                    showProgressBar()
                 }
             }
         })
 
 
 
+    }
+
+    private fun hideProgressBar() {
+        progress_bar_circular.visibility = View.INVISIBLE
+    }
+
+    private fun showProgressBar() {
+       progress_bar_circular.visibility = View.VISIBLE
     }
 
 }
